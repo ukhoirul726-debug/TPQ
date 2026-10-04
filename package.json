@@ -1,0 +1,16 @@
+{
+  "name": "keuangan-tpq",
+  "version": "1.0.0",
+  "description": "Aplikasi Web Keuangan TPQ Mobile-First Berbasis React dan Supabase",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "author": "Pengurus TPQ",
+  "license": "MIT"
+}

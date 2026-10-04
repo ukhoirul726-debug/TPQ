@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Keuangan TPQ</title>
+  <meta name="theme-color" content="#047857">
+  <meta name="description" content="Aplikasi Keuangan TPQ Mobile-First Berbasis React dan Supabase">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="app.css">
+  
+  <!-- Supabase JS Client & React Core Libraries -->
+  <script src="config.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <!-- Container Root React -->
+  <div id="root">
+    <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #F8FAFC; color: #64748B; font-family: sans-serif;">
+      <div style="width: 32px; height: 32px; border: 3px solid #E2E8F0; border-top-color: #047857; border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+      <p style="margin-top: 12px; font-size: 14px;">Memuat Keuangan TPQ...</p>
+    </div>
+  </div>
+
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+
+  <!-- Aplikasi Logika React -->
+  <script src="app.js"></script>
+</body>
+</html>

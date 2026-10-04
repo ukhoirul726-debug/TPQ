@@ -1,0 +1,6 @@
+{
+  "name": "Keuangan TPQ",
+  "description": "Aplikasi keuangan TPQ berbasis web mobile-first dengan React dan Supabase",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

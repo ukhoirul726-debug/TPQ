@@ -1,0 +1,769 @@
+/* ==========================================================================
+   Gaya Tampilan (CSS) - Keuangan TPQ Mobile-First
+   Desain modern, ramah pengguna, beraksen hijau islami & responsif
+   ========================================================================== */
+
+:root {
+  --primary: #047857;
+  --primary-hover: #059669;
+  --primary-dark: #064E3B;
+  --primary-light: #ECFDF5;
+  --primary-border: #A7F3D0;
+  
+  --income: #059669;
+  --income-bg: #ECFDF5;
+  --expense: #DC2626;
+  --expense-bg: #FEF2F2;
+  --balance: #0284C7;
+  --balance-bg: #F0F9FF;
+  
+  --accent: #D97706;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --bg-page: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --border: #E2E8F0;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #E2E8F0;
+  color: var(--text-main);
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+/* Container Mobile-First (Maksimal 480px, pas di layar HP atau ditengah di desktop/tablet) */
+.mobile-wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 24px rgba(0,0,0,0.08);
+}
+
+/* Header Aplikasi */
+.app-header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: #FFFFFF;
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.brand-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-logout {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  min-height: 36px;
+}
+
+.btn-logout:hover {
+  background: rgba(239, 68, 68, 0.8);
+  border-color: rgba(239, 68, 68, 0.9);
+}
+
+/* Area Konten Utama */
+.main-content {
+  flex: 1;
+  padding: 16px 16px 80px 16px;
+  overflow-y: auto;
+}
+
+/* Navigasi Bawah (Bottom Navigation) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 12px;
+  z-index: 50;
+  box-shadow: 0 -3px 12px rgba(0,0,0,0.05);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  transition: all 0.2s;
+  min-width: 68px;
+  min-height: 48px;
+}
+
+.nav-item.active {
+  color: var(--primary);
+  font-weight: 700;
+  background-color: var(--primary-light);
+}
+
+.nav-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.nav-label {
+  font-size: 11px;
+}
+
+/* Kartu & Container */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Ringkasan Saldo Dashboard */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.summary-card {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+.summary-card.income {
+  background-color: var(--income-bg);
+  border-color: #A7F3D0;
+}
+
+.summary-card.expense {
+  background-color: var(--expense-bg);
+  border-color: #FECACA;
+}
+
+.summary-card.balance {
+  background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+  border: 1.5px solid var(--primary-border);
+  grid-column: span 2;
+  padding: 16px;
+}
+
+.summary-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.summary-amount {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.summary-amount.income {
+  color: var(--income);
+}
+
+.summary-amount.expense {
+  color: var(--expense);
+}
+
+.summary-amount.balance {
+  color: var(--primary-dark);
+  font-size: 24px;
+}
+
+.balance-status-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-top: 6px;
+}
+
+.badge-surplus {
+  background-color: #DCFCE7;
+  color: #15803D;
+}
+
+.badge-defisit {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+}
+
+/* Filter Bulan */
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  background: #FFFFFF;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.filter-row label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.filter-row select, .filter-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  background-color: #F8FAFC;
+  outline: none;
+}
+
+.filter-row select:focus, .filter-row input:focus {
+  border-color: var(--primary);
+  background-color: #FFFFFF;
+}
+
+/* Tombol & Aksi */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 48px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: #E2E8F0;
+  color: var(--text-main);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #CBD5E1;
+}
+
+.btn-danger {
+  background-color: var(--expense);
+  color: #FFFFFF;
+}
+
+.btn-danger-outline {
+  background: transparent;
+  border: 1px solid #FCA5A5;
+  color: var(--expense);
+  padding: 6px 10px;
+  min-height: 36px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+.btn-danger-outline:hover {
+  background-color: var(--expense-bg);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.form-label .optional {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  font-size: 14px;
+  color: #0F172A;
+  outline: none;
+  background-color: #FFFFFF;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-height: 44px;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15);
+}
+
+.rupiah-preview {
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Segmented Buttons (Masuk vs Keluar) */
+.segmented-control {
+  display: flex;
+  background: #E2E8F0;
+  padding: 4px;
+  border-radius: var(--radius-md);
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.segment-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 42px;
+  color: var(--text-muted);
+}
+
+.segment-btn.active.masuk {
+  background-color: var(--income);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+}
+
+.segment-btn.active.keluar {
+  background-color: var(--expense);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Item Transaksi List */
+.transaction-item {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.transaction-item:hover {
+  border-color: #CBD5E1;
+  box-shadow: var(--shadow-sm);
+}
+
+.tx-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.tx-badge-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.tx-badge-icon.masuk {
+  background-color: var(--income-bg);
+  color: var(--income);
+}
+
+.tx-badge-icon.keluar {
+  background-color: var(--expense-bg);
+  color: var(--expense);
+}
+
+.tx-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tx-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tx-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tx-desc {
+  font-size: 12px;
+  color: #475569;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tx-right {
+  text-align: right;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.tx-amount {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.tx-amount.masuk {
+  color: var(--income);
+}
+
+.tx-amount.keluar {
+  color: var(--expense);
+}
+
+/* Santri Item Card */
+.santri-item {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.santri-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+.santri-class {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.status-chip {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.status-chip.aktif {
+  background-color: var(--income-bg);
+  color: var(--income);
+}
+
+.status-chip.nonaktif {
+  background-color: #F1F5F9;
+  color: var(--text-muted);
+}
+
+/* Alert & Pesan Error / Sukses */
+.alert {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.alert-error {
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #991B1B;
+}
+
+.alert-success {
+  background-color: #ECFDF5;
+  border: 1px solid #6EE7B7;
+  color: #065F46;
+}
+
+.alert-info {
+  background-color: #EFF6FF;
+  border: 1px solid #93C5FD;
+  color: #1E40AF;
+}
+
+/* Modal Dialog */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-dialog {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  max-width: 420px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.modal-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Layar Auth / Login */
+.auth-wrapper {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+}
+
+.auth-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-logo {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #FFFFFF;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(4, 120, 87, 0.25);
+}
+
+.auth-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.auth-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Kosong (Empty State) */
+.empty-state {
+  text-align: center;
+  padding: 36px 16px;
+  color: var(--text-muted);
+}
+
+.empty-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.empty-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.empty-desc {
+  font-size: 13px;
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #FFFFFF;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
